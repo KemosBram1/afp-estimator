@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+import re
 
 # Page configuration
 st.set_page_config(
@@ -79,6 +80,20 @@ with col2:
 st.divider()
 st.header("Export Quote")
 
+# Sanitize filename
+def sanitize_filename(filename):
+    """Remove or replace invalid filename characters"""
+    # Remove or replace invalid characters
+    filename = re.sub(r'[<>:"/\\|?*]', '', filename)
+    # Replace spaces with underscores
+    filename = filename.replace(' ', '_')
+    # Remove leading/trailing spaces and dots
+    filename = filename.strip('. ')
+    # If empty after sanitization, use default
+    return filename if filename else 'quote'
+
+safe_project_name = sanitize_filename(project_name)
+
 col3, col4 = st.columns(2)
 
 with col3:
@@ -108,7 +123,7 @@ TOTAL QUOTE: ${total:,.2f}
     st.download_button(
         label="Download Quote as Text",
         data=quote_text,
-        file_name=f"quote_{project_name.replace(' ', '_')}_{quote_date}.txt",
+        file_name=f"quote_{safe_project_name}_{quote_date}.txt",
         mime="text/plain"
     )
 
@@ -122,7 +137,7 @@ with col4:
     st.download_button(
         label="Download Quote as CSV",
         data=csv_data.to_csv(index=False),
-        file_name=f"quote_{project_name.replace(' ', '_')}_{quote_date}.csv",
+        file_name=f"quote_{safe_project_name}_{quote_date}.csv",
         mime="text/csv"
     )
 
