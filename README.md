@@ -18,7 +18,7 @@ This application is ready to deploy on Streamlit Cloud:
 2. Go to [share.streamlit.io](https://share.streamlit.io)
 3. Sign in with your GitHub account
 4. Click "New app"
-5. Select this repository and the `app.py` file
+5. Select this repository, branch `main`, and the `app.py` file
 6. Click "Deploy"
 
 ## Local Development
