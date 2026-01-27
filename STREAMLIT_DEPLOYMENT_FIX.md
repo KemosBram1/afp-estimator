@@ -1,12 +1,14 @@
-# IMPORTANT: Streamlit Cloud Deployment Instructions
+# IMPORTANT: Fix for "app.py does not exist" Error
 
 ## The Issue
 
-The `app.py` file and all application files are currently on the `copilot/deploy-to-streamlit-cloud` branch, **not** on the `main` branch.
+When trying to deploy to Streamlit Cloud from the `main` branch, you get: **"app.py file does not exist"**
 
-## Solution: Deploy from the Correct Branch
+This happens because the `app.py` file is currently only on the `copilot/deploy-to-streamlit-cloud` branch, not on the remote `main` branch yet.
 
-When deploying to Streamlit Cloud, follow these steps:
+## ✅ IMMEDIATE SOLUTION (Recommended)
+
+Deploy from the `copilot/deploy-to-streamlit-cloud` branch instead of `main`:
 
 ### Step-by-Step Deployment
 
@@ -15,33 +17,41 @@ When deploying to Streamlit Cloud, follow these steps:
 3. Click "New app"
 4. Configure the deployment:
    - **Repository:** `KemosBram1/afp-estimator`
-   - **Branch:** `copilot/deploy-to-streamlit-cloud` ⚠️ (NOT main!)
+   - **Branch:** `copilot/deploy-to-streamlit-cloud` ⚠️ **← SELECT THIS BRANCH**
    - **Main file path:** `app.py`
 5. Click "Deploy!"
 
-### Important Notes
+The app will deploy successfully because all files exist on this branch.
 
-- ✅ The `app.py` file **EXISTS** on the `copilot/deploy-to-streamlit-cloud` branch
-- ❌ The `app.py` file **DOES NOT EXIST** on the `main` branch yet
-- Make sure to select the correct branch: `copilot/deploy-to-streamlit-cloud`
+## 🔄 ALTERNATIVE SOLUTION
 
-### Alternative: Merge to Main Branch
+If you prefer to deploy from the `main` branch:
 
-If you want to deploy from the `main` branch instead, you need to merge this pull request first:
+1. **Merge this Pull Request** to the `main` branch
+   - Go to the GitHub repository
+   - Find the pull request for `copilot/deploy-to-streamlit-cloud`
+   - Merge it into `main`
 
-1. Merge the `copilot/deploy-to-streamlit-cloud` branch into `main`
-2. Then deploy from the `main` branch
+2. **Then deploy from `main`**
+   - Select branch `main` in Streamlit Cloud
+   - The `app.py` file will now be available
 
 ## Verification
 
-To verify which branch has the files, check:
+Current status of branches on GitHub:
 
-- Branch `copilot/deploy-to-streamlit-cloud`: ✅ Has app.py, requirements.txt, .streamlit/config.toml
-- Branch `main`: ❌ Only has README.md (unless PR is merged)
+- ✅ **Branch `copilot/deploy-to-streamlit-cloud`**: Has all files (app.py, requirements.txt, etc.) - **READY TO DEPLOY**
+- ❌ **Branch `main`**: Only has README.md - **NOT READY** (until PR is merged)
 
-## Quick Test
+## Why This Happened
 
-You can verify the app works by cloning this branch:
+The application was developed on the `copilot/deploy-to-streamlit-cloud` branch as part of a pull request workflow. To deploy, you need to either:
+- Use the development branch directly, OR
+- Merge the changes to main first
+
+## Quick Test (Optional)
+
+You can test the app locally from the correct branch:
 
 ```bash
 git clone https://github.com/KemosBram1/afp-estimator.git
