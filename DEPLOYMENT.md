@@ -15,7 +15,8 @@ Your AFP Quote Estimator is now ready to deploy on Streamlit Cloud!
    - Sign in with your GitHub account
    - Click "New app"
    - Select the repository: `KemosBram1/afp-estimator`
-   - Select the branch: `main` (or the branch you want to deploy)
+   - **IMPORTANT:** Select the branch: `copilot/deploy-to-streamlit-cloud` 
+     (The app files are on this branch. If deploying from `main`, ensure the PR is merged first)
    - Set the main file path: `app.py`
    - Click "Deploy!"
 
@@ -41,6 +42,15 @@ Your AFP Quote Estimator is now ready to deploy on Streamlit Cloud!
 - Clean, responsive design
 
 ## Troubleshooting
+
+### "app.py file does not exist" error
+
+If you get this error when deploying:
+- **Make sure you selected the branch `copilot/deploy-to-streamlit-cloud`** (not `main`)
+- The application files are currently on the `copilot/deploy-to-streamlit-cloud` branch
+- If you want to deploy from `main`, merge the pull request first
+
+### Other issues
 
 If deployment fails:
 - Check that `requirements.txt` has all necessary dependencies
