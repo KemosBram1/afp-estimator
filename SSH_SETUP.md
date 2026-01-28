@@ -47,13 +47,32 @@ ssh-add ~/.ssh/id_ed25519
 
 ## Step 4: Copy Your Public SSH Key
 
-Display and copy your public SSH key:
+Copy your public SSH key to your clipboard. Choose the appropriate command for your operating system:
 
+**macOS:**
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+**Linux (requires xclip):**
+```bash
+# Install xclip if needed
+sudo apt-get install xclip
+# Copy the key
+xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+```
+
+**Windows (Git Bash):**
+```bash
+clip < ~/.ssh/id_ed25519.pub
+```
+
+**Alternative (all platforms):**
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
-The output will look something like:
+If using `cat`, the output will look something like:
 ```
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJl3dIeudNqd0PZMD7BqvP8D8vqKNQzZ8Hc6PJg7X3Ko your-email@example.com
 ```
