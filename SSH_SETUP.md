@@ -135,7 +135,10 @@ To convert an existing repository from HTTPS to SSH:
 # Change remote URL to SSH
 git remote set-url origin git@github.com:KemosBram1/afp-estimator.git
 
-# Push to main branch
+# Verify the remote URL was changed
+git remote -v
+
+# Push to main branch (when you have commits to push)
 git push origin main
 ```
 
@@ -144,16 +147,17 @@ git push origin main
 # General format
 git remote set-url origin git@github.com:username/repository.git
 
-# Push to your default branch
-git push origin main  # or master, depending on your default branch
-```
-
-**Verify the remote URL was changed:**
-```bash
+# Verify the change
 git remote -v
+
+# Push to your default branch (when you have commits to push)
+git push origin main  # or master, or your branch name
 ```
 
-You should see SSH URLs (starting with `git@github.com:`) instead of HTTPS URLs.
+**Notes:**
+- The `git remote -v` command will show your remote URLs. You should see SSH URLs (starting with `git@github.com:`) instead of HTTPS URLs.
+- The `git push` command is only needed when you have local commits to push to the remote repository.
+- Use `git branch` to check your current branch name if you're unsure.
 
 ## Troubleshooting
 

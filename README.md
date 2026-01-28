@@ -25,6 +25,9 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 # 5. After adding the key to GitHub, configure repository to use SSH
 git remote set-url origin git@github.com:KemosBram1/afp-estimator.git
+
+# 6. Verify and push (when you have commits)
+git remote -v
 git push origin main
 ```
 
