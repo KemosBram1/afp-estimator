@@ -56,8 +56,14 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 **Linux (requires xclip):**
 ```bash
-# Install xclip if needed
+# Install xclip if needed (choose based on your distribution)
+# Debian/Ubuntu:
 sudo apt-get install xclip
+# Fedora:
+# sudo dnf install xclip
+# Arch:
+# sudo pacman -S xclip
+
 # Copy the key
 xclip -selection clipboard < ~/.ssh/id_ed25519.pub
 ```
