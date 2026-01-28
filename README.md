@@ -75,6 +75,24 @@ The application will open in your browser at `http://localhost:8501`
 - 📗 [QUICK_UPDATE_GUIDE.md](QUICK_UPDATE_GUIDE.md) - Quick reference for updates
 - 📙 [DEPLOYMENT.md](DEPLOYMENT.md) - Deployment guide
 - 📕 [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common issues and solutions
+- 🔗 [SHAREPOINT_WORKFLOW.md](SHAREPOINT_WORKFLOW.md) - Working with SharePoint and Git
+- ⚡ [SHAREPOINT_QUICK_ANSWER.md](SHAREPOINT_QUICK_ANSWER.md) - SharePoint sync quick answer
+
+## Working with SharePoint?
+
+If you're developing in SharePoint and want to deploy to Streamlit Cloud:
+
+⚠️ **SharePoint cannot automatically push to Git.** See [SHAREPOINT_QUICK_ANSWER.md](SHAREPOINT_QUICK_ANSWER.md) for solutions.
+
+**Recommended approach:** Develop locally with Git, use SharePoint for documents only.
+
+```bash
+# Work in your local Git folder
+cd /path/to/afp-estimator
+# Edit files, test, then push
+git add . && git commit -m "Changes" && git push
+# Auto-deploys in 1-3 minutes!
+```
 
 ## Requirements
 
