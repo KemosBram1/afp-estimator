@@ -13,3 +13,5 @@ See [SSH_SETUP.md](SSH_SETUP.md) for detailed instructions on generating and con
 ```bash
 ssh-keygen -t ed25519 -C "bkemoli@associatedfire.net"
 ```
+
+> **Note:** Replace the email address with your own when running this command.

@@ -15,9 +15,11 @@ Open your terminal and run the following command to generate a new SSH key:
 ssh-keygen -t ed25519 -C "bkemoli@associatedfire.net"
 ```
 
+> **Note:** Replace `bkemoli@associatedfire.net` with your own email address.
+
 **What this command does:**
 - `-t ed25519`: Specifies the type of key to create (Ed25519 algorithm, which is more secure and performant)
-- `-C "bkemoli@associatedfire.net"`: Adds a label to the key with your email address
+- `-C "your-email@example.com"`: Adds a label to the key with your email address
 
 **During key generation:**
 1. You'll be prompted to enter a file location to save the key. Press Enter to accept the default location (`~/.ssh/id_ed25519`)
@@ -53,7 +55,7 @@ cat ~/.ssh/id_ed25519.pub
 
 The output will look something like:
 ```
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJl3dIeudNqd0PZMD7BqvP8D8vqKNQzZ8Hc6PJg7X3Ko bkemoli@associatedfire.net
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJl3dIeudNqd0PZMD7BqvP8D8vqKNQzZ8Hc6PJg7X3Ko your-email@example.com
 ```
 
 Copy the entire output (including `ssh-ed25519` and your email).
@@ -80,7 +82,7 @@ ssh -T git@github.com
 
 You should see a message like:
 ```
-Hi KemosBram1! You've successfully authenticated, but GitHub does not provide shell access.
+Hi YourUsername! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 If you see this message, your SSH key is set up correctly!
@@ -91,16 +93,16 @@ When cloning repositories, use the SSH URL instead of HTTPS:
 
 ```bash
 # SSH URL format
-git clone git@github.com:KemosBram1/afp-estimator.git
+git clone git@github.com:username/repository.git
 
 # Instead of HTTPS
-# git clone https://github.com/KemosBram1/afp-estimator.git
+# git clone https://github.com/username/repository.git
 ```
 
 To convert an existing repository from HTTPS to SSH:
 
 ```bash
-git remote set-url origin git@github.com:KemosBram1/afp-estimator.git
+git remote set-url origin git@github.com:username/repository.git
 ```
 
 ## Troubleshooting
@@ -118,7 +120,7 @@ If you get a "Permission denied" error:
 
 If you get an error that the key already exists, you can:
 - Use the existing key
-- Generate a new key with a different filename: `ssh-keygen -t ed25519 -C "bkemoli@associatedfire.net" -f ~/.ssh/id_ed25519_new`
+- Generate a new key with a different filename: `ssh-keygen -t ed25519 -C "your-email@example.com" -f ~/.ssh/id_ed25519_new`
 
 ## Additional Resources
 
