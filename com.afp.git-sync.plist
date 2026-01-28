@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.afp.git-sync</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/REPLACE_ME/Library/CloudStorage/OneDrive-AssociatedFireProtection/SLM - Sales & Marketing (2025) - src/set-git-push.sh</string>
+  </array>
+
+  <key>StartInterval</key>
+  <integer>300</integer>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/com.afp.git-sync.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/com.afp.git-sync.err</string>
+</dict>
+</plist>
