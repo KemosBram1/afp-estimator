@@ -22,6 +22,10 @@ ssh-add ~/.ssh/id_ed25519
 
 # 4. Copy public key (macOS)
 pbcopy < ~/.ssh/id_ed25519.pub
+
+# 5. After adding the key to GitHub, configure repository to use SSH
+git remote set-url origin git@github.com:KemosBram1/afp-estimator.git
+git push origin main
 ```
 
 > **Note:** Replace the email address with your own when running these commands. For Linux/Windows clipboard commands, see the full guide.

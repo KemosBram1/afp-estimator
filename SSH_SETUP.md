@@ -114,6 +114,8 @@ If you see this message, your SSH key is set up correctly!
 
 ## Step 7: Configure Git to Use SSH
 
+### For New Repository Clones
+
 When cloning repositories, use the SSH URL instead of HTTPS:
 
 ```bash
@@ -124,11 +126,34 @@ git clone git@github.com:username/repository.git
 # git clone https://github.com/username/repository.git
 ```
 
+### For Existing Repositories
+
 To convert an existing repository from HTTPS to SSH:
 
+**For the afp-estimator repository:**
 ```bash
-git remote set-url origin git@github.com:username/repository.git
+# Change remote URL to SSH
+git remote set-url origin git@github.com:KemosBram1/afp-estimator.git
+
+# Push to main branch
+git push origin main
 ```
+
+**For other repositories:**
+```bash
+# General format
+git remote set-url origin git@github.com:username/repository.git
+
+# Push to your default branch
+git push origin main  # or master, depending on your default branch
+```
+
+**Verify the remote URL was changed:**
+```bash
+git remote -v
+```
+
+You should see SSH URLs (starting with `git@github.com:`) instead of HTTPS URLs.
 
 ## Troubleshooting
 
