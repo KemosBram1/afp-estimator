@@ -1,5 +1,14 @@
 # set-git-push.ps1
 # Monitors a local SharePoint-synced repo and auto-commits/pushes changes to GitHub.
+# -------------------------------------------------------------------------------
+# QUICK START
+# 1) Set $repoPath below to your local SharePoint-synced Git repo.
+# 2) Run from PowerShell:
+#    powershell -ExecutionPolicy Bypass -File .\set-git-push.ps1
+# Optional: override defaults at runtime:
+#    powershell -ExecutionPolicy Bypass -File .\set-git-push.ps1 -RepoPath "C:\Path\To\Repo" -DebounceSeconds 10
+# -------------------------------------------------------------------------------
+
 # Update this to your local SharePoint-synced Git repo path.
 $repoPath = "C:\Path\To\Your\Local\GitHubRepo"
 
@@ -7,6 +16,7 @@ $repoPath = "C:\Path\To\Your\Local\GitHubRepo"
 param(
     [string]$RepoPath = $repoPath,
 
+    # Wait this long after the last file change before committing/pushing.
     [int]$DebounceSeconds = 10
 )
 
