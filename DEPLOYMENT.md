@@ -62,10 +62,38 @@ If deployment fails:
 
 After deployment, you can:
 - Share the URL with your team
-- Customize the app further
+- Customize the app further (see UPDATE_WORKFLOW.md)
 - Add authentication if needed
 - Connect to databases for saving quotes
 - Add more features as requirements grow
+
+## Updating Your Deployed App
+
+**You can update your app after deployment!** Changes are automatically deployed when you push to GitHub.
+
+Quick update process:
+```bash
+# 1. Test locally
+streamlit run app.py
+
+# 2. Commit and push
+git add .
+git commit -m "Your changes"
+git push origin copilot/deploy-to-streamlit-cloud
+
+# 3. Wait 1-3 minutes for automatic redeployment
+```
+
+📖 **For detailed information:** See [UPDATE_WORKFLOW.md](UPDATE_WORKFLOW.md)
+📖 **Quick reference:** See [QUICK_UPDATE_GUIDE.md](QUICK_UPDATE_GUIDE.md)
+
+### Key Points
+
+- ✅ Updates work just like local development, but through Git
+- ✅ Changes pushed to GitHub trigger automatic redeployment
+- ✅ Always test locally before pushing
+- ✅ Redeployment takes 1-3 minutes
+- ✅ You can rollback if needed
 
 ## Support
 
