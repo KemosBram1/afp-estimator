@@ -13,11 +13,14 @@ import glob
 
 @st.cache_resource
 def get_data_dir():
-    """Smart Path Finder for Shared_Data."""
+    """Smart Path Finder for Shared_Data sources."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = ["Shared_Data_WebApp Modular", "Shared_Data"]
     for _ in range(4):
-        check_path = os.path.join(current_dir, "Shared_Data")
-        if os.path.exists(check_path): return check_path
+        for folder in candidates:
+            check_path = os.path.join(current_dir, folder)
+            if os.path.exists(check_path):
+                return check_path
         parent_dir = os.path.dirname(current_dir)
         if parent_dir == current_dir: break
         current_dir = parent_dir
