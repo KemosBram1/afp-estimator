@@ -8,7 +8,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/bramuelkemoli/Library/CloudStorage/OneDrive-AssociatedFireProtection/SLM - Sales &amp; Marketing (2025) - src/set-git-push.sh</string>
+    <string>/Users/bramuelkemoli/Scripts/set-git-push.sh</string>
   </array>
 
   <key>StartInterval</key>
