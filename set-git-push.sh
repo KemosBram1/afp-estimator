@@ -9,10 +9,8 @@
 # 3) Run manually:   ./set-git-push.sh
 # -------------------------------------------------------------------------------
 
-REPO_PATH="/path/to/your/local/repo"
-BRANCH="main"
-
-# Go to the local GitHub repository directory
+REPO_PATH="/Users/bramuelkemoli/Library/CloudStorage/OneDrive-AssociatedFireProtection/SLM - Sales & Marketing (2025) - src"
+BRANCH="main"# Go to the local GitHub repository directory
 cd "$REPO_PATH" || exit 1
 
 # Pull the latest changes from the GitHub repository
